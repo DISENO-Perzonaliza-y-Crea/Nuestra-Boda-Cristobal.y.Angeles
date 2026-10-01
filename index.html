@@ -1,136 +1,123 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Boda - Cristóbal & Ángeles</title>
     
-    <meta property="og:title" content="¡Nuestra Boda! - Cristóbal y Ángeles">
-    <meta property="og:description" content="Te invitamos a celebrar con nosotros este día tan especial. ¡Haz clic para ver los detalles y confirmar tu asistencia!">
+    <meta property="og:title" content="Nuestra Boda - Cristóbal & Ángeles">
+    <meta property="og:description" content="¡Te invitamos a celebrar nuestra boda! Haz clic aquí para ver la invitación.">
     <meta property="og:image" content="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/portada%20(9).png">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://github.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles">
     <meta property="og:type" content="website">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Great Vibes & Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0b1329;
-            color: #f8fafc;
+            background-color: #121212;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
-        .font-script {
-            font-family: 'Great Vibes', cursive;
-        }
-        .bg-burgundy {
-            background-color: #6b1d2f;
-        }
-        .bg-burgundy:hover {
-            background-color: #541624;
-        }
-        .text-burgundy {
-            color: #6b1d2f;
-        }
-        .invitation-container {
-            max-width: 480px;
-            margin: 0 auto;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
         }
     </style>
 </head>
-<body class="bg-[#0b1329] min-h-screen py-0 md:py-6 flex flex-col items-center justify-center">
+<body class="flex justify-center items-center min-h-screen bg-slate-950 pb-20">
 
-    <audio id="bgMusic" loop>
-        <source src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/Carlos%20Rivera%20-%20Te%20Esperaba%20(Lyric%20Video).mp3" type="audio/mp3">
-        Tu navegador no soporta audio.
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://github.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/raw/main/GRUPO%20VIENTO%20Y%20SOL%20PAR%20DE%20ANILLOS.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <!-- Floating Music / Audio Control Button -->
-    <button id="musicToggle" onclick="toggleMusic()" class="fixed bottom-6 right-6 z-50 bg-[#6b1d2f] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition flex items-center justify-center border-2 border-amber-300">
-        <i id="musicIcon" class="fa-solid fa-music text-xl"></i>
-    </button>
-
-    <div class="invitation-container w-full bg-[#1e293b] relative overflow-hidden flex flex-col items-center">
+    <div class="w-full max-w-md bg-[#fdfbf7] min-h-screen shadow-2xl relative flex flex-col overflow-hidden">
 
         <div class="w-full flex flex-col">
             
-            <!-- Imagen 7(1).png -->
-            <div class="w-full relative">
-                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/7(1).png" alt="Invitación Parte 1" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x900/1e293b/ffffff?text=Imagen+7(1)'">
+            <!-- Página 1 -->
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/7(1).png" alt="Página 1" class="w-full h-auto block">
             </div>
 
-            <!-- Imagen 8(1).png -->
+            <!-- Página 2 -->
             <div class="w-full relative">
-                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/8(1).png" alt="Invitación Parte 2" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x900/1e293b/ffffff?text=Imagen+8(1)'">
+                <!-- Botón de música (ajustado a top: 16%) -->
+                <button id="musicToggleBtn" onclick="toggleMusic()" class="absolute z-[9999] bg-[#6b1d2f] hover:bg-[#541624] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 border-2 border-amber-300/60 backdrop-blur-sm w-[65px] h-[65px] cursor-pointer" style="left: 50%; top: 16%; transform: translateX(-50%);">
+                    <i id="musicIcon" class="fa-solid fa-play text-xl translate-x-0.5"></i>
+                </button>
+                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/8(1).png" alt="Página 2" class="w-full h-auto block relative z-0">
+            </div>
+
+            <!-- Página 3 -->
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/raw/main/NUESTRA%20BODA_20260930_114236_0000.png" alt="Página 3" class="w-full h-auto block">
+            </div>
+
+            <!-- Página 4 -->
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/raw/main/NUESTRA%20BODA_20260930_114236_0000.png" alt="Página 4" class="w-full h-auto block">
+            </div>
+
+            <!-- Página 5 -->
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/9(1).png" alt="Página 5" class="w-full h-auto block">
+            </div>
+
+            <!-- Página 6 -->
+            <div class="w-full relative">
+                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/NUESTRA%20BODA.png" alt="Página 6" class="w-full h-auto block">
                 
-                <!-- Botón especial de música circular en la segunda página, bajado un 2% más (73%) y 20% más grande -->
-                <div class="absolute inset-x-0 bottom-[73%] flex justify-center items-center z-10">
-                    <button onclick="toggleMusic()" class="w-20 h-20 bg-[#6b1d2f] text-white rounded-full shadow-2xl hover:bg-[#541624] transition flex items-center justify-center border-2 border-amber-300 p-0 aspect-square">
-                        <i id="pageMusicIcon" class="fa-solid fa-play text-3xl"></i> 
-                    </button>
+                <!-- Location Button 1 (top: 78%) -->
+                <div class="absolute z-25" style="left: 35%; top: 78%; transform: translate(-50%, -50%); width: 30%;">
+                    <a href="https://www.google.com/maps/@20.3752164,-100.2747637,3a,75y,346.29h,89.19t/data=!3m7!1e1!3m5!1sXVUaBrbH77k3sFetI8iCgQ!2e0!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2 px-1 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1 text-[11px] sm:text-[12px] border border-amber-300/45">
+                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
+                    </a>
+                </div>
+                
+                <!-- Location Button 2 (top: 94%, left: 80.5%) -->
+                <div class="absolute z-25" style="left: 80.5%; top: 94%; transform: translate(-50%, -50%); width: 27%;">
+                    <a href="https://www.google.com/maps/place/20%C2%B022'28.5%22N+100%C2%B018'43.4%22W/@20.3745501,-100.3125196,19z/data=!4m4!3m3!8m2!3d20.3745878!4d-100.3120529?hl=es&entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2 px-1 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1 text-[11px] sm:text-[12px] border border-amber-300/45">
+                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
+                    </a>
                 </div>
             </div>
 
-            <!-- Imagen 9(1).png -->
+            <!-- Página 7 -->
             <div class="w-full relative">
-                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/9(1).png" alt="Invitación Parte 3" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x900/1e293b/ffffff?text=Imagen+9(1)'">
-            </div>
-
-            <!-- Imagen NUESTRA BODA.png (Penúltima imagen con los dos botones de ubicación ajustados) -->
-            <div class="w-full relative">
-                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/NUESTRA%20BODA.png" alt="Nuestra Boda Principal" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x900/1e293b/ffffff?text=Nuestra+Boda'">
-                
-                <div class="absolute inset-x-0 bottom-6 px-6 flex flex-col gap-3 justify-center items-center z-10">
-                    <!-- Botón 1: Ancho 31.5%, Posición translate(-80%, -255%) -->
-                    <a id="locBtn1" href="https://www.google.com/maps/@20.3752164,-100.2747637,3a,75y,346.29h,89.19t/data=!3m7!1e1!3m5!1sXVUaBrbH77k3sFetI8iCgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8056154285877142%26panoid%3DXVUaBrbH77k3sFetI8iCgQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.8056154285877142%26panoid%3DXVUaBrbH77k3sFetI8iCgQ!2e0!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2.5 px-2 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1.5 text-[11px] border border-amber-300/45" style="max-width: 31.5%; transform: translate(-80%, -255%);">
-                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
-                    </a>
-                    <!-- Botón 2: Ancho 31.5%, Posición translate(58%, 55%) -->
-                    <a id="locBtn2" href="https://www.google.com/maps/place/20%C2%B022'28.5%22N+100%C2%B018'43.4%22W/@20.3745501,-100.3125196,19z/data=!4m4!3m3!8m2!3d20.3745878!4d-100.3120529?hl=es&entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2.5 px-2 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1.5 text-[11px] border border-amber-300/45" style="max-width: 31.5%; transform: translate(58%, 55%);">
-                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
-                    </a>
-                </div>
-            </div>
-
-            <!-- Imagen 11.png (Última página con cuenta regresiva bajada un 3%) -->
-            <div class="w-full relative">
-                <div class="absolute inset-x-0 top-[14%] px-4 flex flex-col items-center z-10">
-                    <div class="p-2 w-full max-w-xs text-center">
-                        <h4 class="text-[#6b1d2f] text-xs uppercase tracking-widest font-bold mb-3 drop-shadow-sm">Faltan para nuestra boda</h4>
-                        <div id="countdown" class="grid grid-cols-4 gap-2 text-white">
-                            <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-2 rounded-xl border border-amber-300/60 shadow-lg">
-                                <span id="days" class="block text-lg font-bold text-white">00</span>
-                                <span class="text-[10px] uppercase text-amber-100">Días</span>
-                            </div>
-                            <div class="bg-white/95 backdrop-blur-sm p-2 rounded-xl border border-amber-300/60 shadow-lg">
-                                <span id="hours" class="block text-lg font-bold text-[#6b1d2f]">00</span>
-                                <span class="text-[10px] uppercase text-slate-700">Hrs</span>
-                            </div>
-                            <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-2 rounded-xl border border-amber-300/60 shadow-lg">
-                                <span id="minutes" class="block text-lg font-bold text-white">00</span>
-                                <span class="text-[10px] uppercase text-amber-100">Min</span>
-                            </div>
-                            <div class="bg-white/95 backdrop-blur-sm p-2 rounded-xl border border-amber-300/60 shadow-lg">
-                                <span id="seconds" class="block text-lg font-bold text-[#6b1d2f]">00</span>
-                                <span class="text-[10px] uppercase text-slate-700">Seg</span>
-                            </div>
+                <!-- Countdown Timer (top: 24.2%) -->
+                <div class="absolute z-20 flex justify-center" style="left: 50%; top: 24.2%; transform: translate(-50%, -50%); width: 82%;">
+                    <div id="countdown" class="grid grid-cols-4 gap-1.5 sm:gap-2 text-white w-full">
+                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
+                            <span id="days" class="text-sm sm:text-base font-bold block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Días</span>
+                        </div>
+                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
+                            <span id="hours" class="text-sm sm:text-base font-bold block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Hrs</span>
+                        </div>
+                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
+                            <span id="minutes" class="text-sm sm:text-base font-bold block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Min</span>
+                        </div>
+                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
+                            <span id="seconds" class="text-sm sm:text-base font-bold block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Seg</span>
                         </div>
                     </div>
                 </div>
-
-                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/11.png" alt="Invitación Parte Final" class="w-full h-auto block" onerror="this.src='https://placehold.co/600x900/1e293b/ffffff?text=Imagen+11'">
+                <img src="https://raw.githubusercontent.com/lupitacontrerasruiz-lang/Nuestra-Boda-Cristobal.y.Angeles/main/11.png" alt="Página 7" class="w-full h-auto block">
             </div>
 
-        </div>
-
-        <!-- Footer -->
-        <div class="w-full py-6 bg-[#0f172a] text-center text-slate-400 text-xs">
-            <p>© 2026 Cristóbal & Ángeles • Nuestra Boda</p>
         </div>
 
     </div>
@@ -139,53 +126,42 @@
         let isPlaying = false;
         const bgMusic = document.getElementById('bgMusic');
         const musicIcon = document.getElementById('musicIcon');
-        const pageMusicIcon = document.getElementById('pageMusicIcon');
 
-        // Reproducir música automáticamente al primer toque
-        document.body.addEventListener('click', function initAudioOnce() {
-            if (!isPlaying) {
-                bgMusic.volume = 0.4;
-                bgMusic.play().then(() => {
-                    isPlaying = true;
-                    musicIcon.className = "fa-solid fa-volume-high text-xl";
-                    if(pageMusicIcon) pageMusicIcon.className = "fa-solid fa-pause text-lg";
-                }).catch(e => {
-                    console.log("Audio autoplay prevented.");
-                });
-            }
-        }, { once: true });
-
-        // Alternar reproducción de música
         function toggleMusic() {
             if (isPlaying) {
                 bgMusic.pause();
+                musicIcon.className = "fa-solid fa-play text-xl translate-x-0.5";
                 isPlaying = false;
-                musicIcon.className = "fa-solid fa-volume-xmark text-xl";
-                if(pageMusicIcon) pageMusicIcon.className = "fa-solid fa-play text-lg";
             } else {
                 bgMusic.play().then(() => {
+                    musicIcon.className = "fa-solid fa-pause text-xl";
                     isPlaying = true;
-                    musicIcon.className = "fa-solid fa-volume-high text-xl";
-                    if(pageMusicIcon) pageMusicIcon.className = "fa-solid fa-pause text-lg";
-                }).catch(err => {
-                    console.log("Error al reproducir audio:", err);
+                }).catch(e => {
+                    console.log("Audio play blocked by browser policy:", e);
                 });
             }
         }
 
-        // Cuenta regresiva: del 27 de septiembre de 2026 a las 7:25 PM al 19 de diciembre de 2026 a las 2:00 PM
-        const startDate = new Date('2026-09-27T19:25:00').getTime();
-        const targetDate = new Date('2026-12-19T14:00:00').getTime();
+        // Auto-play music on first user interaction anywhere on screen
+        document.body.addEventListener('click', function initAudio() {
+            if (!isPlaying) {
+                bgMusic.play().then(() => {
+                    musicIcon.className = "fa-solid fa-pause text-xl";
+                    isPlaying = true;
+                }).catch(e => {});
+            }
+            document.body.removeEventListener('click', initAudio);
+        }, { once: true });
+
+        // Countdown Timer Logic (Target Date: November 21, 2026)
+        const weddingDate = new Date("November 21, 2026 15:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
-            const distance = targetDate - now;
+            const distance = weddingDate - now;
 
             if (distance < 0) {
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-center font-bold text-[#6b1d2f] text-sm'>¡Llegó el gran día!</div>";
                 return;
             }
 
@@ -202,14 +178,6 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        // Configurar metadatos og:url automáticamente
-        document.addEventListener("DOMContentLoaded", () => {
-            const ogUrlMeta = document.querySelector('meta[property="og:url"]');
-            if(ogUrlMeta) {
-                ogUrlMeta.setAttribute("content", window.location.href);
-            }
-        });
     </script>
 </body>
 </html>
