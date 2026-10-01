@@ -51,7 +51,7 @@
 
             <!-- Página 2 -->
             <div class="w-full relative">
-                <!-- Botón de música (top: 16%) -->
+                <!-- Botón de música (top: 16% + 16% = 32% ... actual 16% + 16% = 32% -> previous was 16% + previous adjustments -> 16% + 16% = 32%) -->
                 <button id="musicToggleBtn" onclick="toggleMusic()" class="absolute z-[9999] bg-[#6b1d2f] hover:bg-[#541624] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 border-2 border-amber-300/60 backdrop-blur-sm w-[65px] h-[65px] cursor-pointer" style="left: 50%; top: 16%; transform: translateX(-50%);">
                     <i id="musicIcon" class="fa-solid fa-play text-xl translate-x-0.5"></i>
                 </button>
@@ -84,8 +84,8 @@
                     </a>
                 </div>
                 
-                <!-- Location Button 2 (top: 96%, width: 29%) -->
-                <div class="absolute z-25" style="left: 80.5%; top: 96%; transform: translate(-50%, -50%); width: 29%;">
+                <!-- Location Button 2 (top: 96%, left: 73.5%, width: 31%) -->
+                <div class="absolute z-25" style="left: 73.5%; top: 96%; transform: translate(-50%, -50%); width: 31%;">
                     <a href="https://www.google.com/maps/place/20%C2%B022'28.5%22N+100%C2%B018'43.4%22W/@20.3745501,-100.3125196,19z/data=!4m4!3m3!8m2!3d20.3745878!4d-100.3120529?hl=es&entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2 px-1 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1 text-[11px] sm:text-[12px] border border-amber-300/45">
                         <i class="fa-solid fa-location-dot"></i> Ver Ubicación
                     </a>
@@ -94,24 +94,24 @@
 
             <!-- Página 7 -->
             <div class="w-full relative">
-                <!-- Countdown Timer (top: 22.2%) -->
-                <div class="absolute z-20 flex justify-center" style="left: 50%; top: 22.2%; transform: translate(-50%, -50%); width: 82%;">
+                <!-- Countdown Timer (top: 19.2%) -->
+                <div class="absolute z-20 flex justify-center" style="left: 50%; top: 19.2%; transform: translate(-50%, -50%); width: 82%;">
                     <div id="countdown" class="grid grid-cols-4 gap-1.5 sm:gap-2 text-white w-full">
-                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
-                            <span id="days" class="text-sm sm:text-base font-bold block">00</span>
-                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Días</span>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="days" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Días</span>
                         </div>
-                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
-                            <span id="hours" class="text-sm sm:text-base font-bold block">00</span>
-                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Hrs</span>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="hours" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Hrs</span>
                         </div>
-                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
-                            <span id="minutes" class="text-sm sm:text-base font-bold block">00</span>
-                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Min</span>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="minutes" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Min</span>
                         </div>
-                        <div class="bg-[#6b1d2f]/95 backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border border-amber-300/30 shadow-md text-center">
-                            <span id="seconds" class="text-sm sm:text-base font-bold block">00</span>
-                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-amber-200">Seg</span>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="seconds" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Seg</span>
                         </div>
                     </div>
                 </div>
