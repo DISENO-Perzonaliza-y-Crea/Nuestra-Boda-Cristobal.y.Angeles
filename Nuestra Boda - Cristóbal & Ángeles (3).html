@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Cristóbal & Ángeles</title>
+    
+    <meta property="og:title" content="Nuestra Boda - Cristóbal & Ángeles">
+    <meta property="og:description" content="¡Te invitamos a celebrar nuestra boda! Haz clic aquí para ver la invitación.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/portada%20(9).png">
+    <meta property="og:url" content="https://github.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-slate-950 pb-20">
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/GRUPO%20VIENTO%20Y%20SOL%20PAR%20DE%20ANILLOS.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="w-full max-w-md bg-[#fdfbf7] min-h-screen shadow-2xl relative flex flex-col overflow-hidden">
+
+        <div class="w-full flex flex-col">
+            
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/7(1).png" alt="Página 1" class="w-full h-auto block">
+            </div>
+
+            <div class="w-full relative">
+                <button id="musicToggleBtn" onclick="toggleMusic()" class="absolute z-[9999] bg-[#6b1d2f] hover:bg-[#541624] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 border-2 border-amber-300/60 backdrop-blur-sm w-[65px] h-[65px] cursor-pointer" style="left: 50%; top: 16%; transform: translateX(-50%);">
+                    <i id="musicIcon" class="fa-solid fa-play text-xl translate-x-0.5"></i>
+                </button>
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/8(1).png" alt="Página 2" class="w-full h-auto block relative z-0">
+            </div>
+
+            <div class="w-full">
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/NUESTRA%20BODA_20260930_114236_0000.png" alt="Página 3" class="w-full h-auto block">
+            </div>
+
+            <div class="w-full relative">
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/NUESTRA%20BODA_20260930_232943_0000.png" alt="Página 4" class="w-full h-auto block">
+                
+                <!-- Location Button 1 (top: 77%) -->
+                <div class="absolute z-25" style="left: 35%; top: 77%; transform: translate(-50%, -50%); width: 30%;">
+                    <a href="https://maps.app.goo.gl/pn1KbyAanJGBXM9n9" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2 px-1 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1 text-[11px] sm:text-[12px] border border-amber-300/45">
+                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
+                    </a>
+                </div>
+                
+                <!-- Location Button 2 (top: 96%, left: 73.5%, width: 31%) -->
+                <div class="absolute z-25" style="left: 73.5%; top: 96%; transform: translate(-50%, -50%); width: 31%;">
+                    <a href="https://www.google.com/maps/place/20%C2%B022'28.5%22N+100%C2%B018'43.4%22W/@20.3745501,-100.3125196,19z/data=!4m4!3m3!8m2!3d20.3745878!4d-100.3120529?hl=es&entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="w-full bg-[#6b1d2f] text-white font-semibold py-2 px-1 rounded-xl shadow-xl hover:bg-[#541624] transition flex items-center justify-center gap-1 text-[11px] sm:text-[12px] border border-amber-300/45">
+                        <i class="fa-solid fa-location-dot"></i> Ver Ubicación
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full relative">
+                <!-- Countdown Timer (top: 19.2%) -->
+                <div class="absolute z-20 flex justify-center" style="left: 50%; top: 19.2%; transform: translate(-50%, -50%); width: 82%;">
+                    <div id="countdown" class="grid grid-cols-4 gap-1.5 sm:gap-2 text-white w-full">
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="days" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Días</span>
+                        </div>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="hours" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Hrs</span>
+                        </div>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="minutes" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Min</span>
+                        </div>
+                        <div class="bg-[#6b1d2f] backdrop-blur-sm p-1.5 sm:p-2 rounded-lg border-2 border-white shadow-md text-center">
+                            <span id="seconds" class="text-sm sm:text-base font-bold text-white block">00</span>
+                            <span class="text-[8px] sm:text-[9px] uppercase tracking-wider text-white font-medium">Seg</span>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://raw.githubusercontent.com/DISENO-Perzonaliza-y-Crea/Nuestra-Boda-Cristobal.y.Angeles/main/11.png" alt="Página 5" class="w-full h-auto block">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let isPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        const musicIcon = document.getElementById('musicIcon');
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.className = "fa-solid fa-play text-xl translate-x-0.5";
+                isPlaying = false;
+            } else {
+                bgMusic.play().then(() => {
+                    musicIcon.className = "fa-solid fa-pause text-xl";
+                    isPlaying = true;
+                }).catch(e => {
+                    console.log("Audio play blocked by browser policy:", e);
+                });
+            }
+        }
+
+        // Auto-play music on first user interaction anywhere on screen
+        document.body.addEventListener('click', function initAudio() {
+            if (!isPlaying) {
+                bgMusic.play().then(() => {
+                    musicIcon.className = "fa-solid fa-pause text-xl";
+                    isPlaying = true;
+                }).catch(e => {});
+            }
+            document.body.removeEventListener('click', initAudio);
+        }, { once: true });
+
+        // Countdown Timer Logic (Start: Sep 30, 2026, 23:25:00 | Target Date: December 19, 2026, 14:00:00)
+        const weddingDate = new Date("December 19, 2026 14:00:00").getTime();
+        const startDate = new Date("September 30, 2026 23:25:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-center font-bold text-[#6b1d2f] text-sm'>¡Llegó el gran día!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
